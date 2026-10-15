@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DefesaCerta AI</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container">
+        <span class="navbar-brand">DefesaCerta AI</span>
+
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-outline-light">
+                Sair
+            </button>
+        </form>
+    </div>
+</nav>
+
+<div class="container py-5">
+    <div class="card shadow p-4">
+        <h1 class="text-primary">Bem-vindo ao DefesaCerta AI!</h1>
+
+        <p>
+            Sistema de apoio à elaboração de defesas prévias
+            de infrações de trânsito.
+        </p>
+
+        <p>Você está autenticado no sistema.</p>
+
+        <button class="btn btn-secondary" disabled>
+            Nova Defesa — em desenvolvimento
+        </button>
+    </div>
+</div>
+
+</body>
+</html>
+

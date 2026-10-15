@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastro - DefesaCerta AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container py-5">
+    <div class="card shadow mx-auto p-4" style="max-width: 500px;">
+        <h2 class="text-center text-primary">Criar conta</h2>
+
+        <form method="post">
+            {% csrf_token %}
+
+            {% for campo in form %}
+                <div class="mb-3">
+                    <label for="{{ campo.id_for_label }}"
+                           class="form-label">
+                        {{ campo.label }}
+                    </label>
+
+                    {{ campo }}
+
+                    {% if campo.help_text %}
+                        <div class="form-text">
+                            {{ campo.help_text|safe }}
+                        </div>
+                    {% endif %}
+
+                    {% for erro in campo.errors %}
+                        <div class="text-danger small">{{ erro }}</div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+
+            {% if form.non_field_errors %}
+                <div class="alert alert-danger">
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+
+            <button type="submit" class="btn btn-success w-100">
+                Criar minha conta
+            </button>
+        </form>
+
+        <p class="text-center mt-3">
+            Já possui conta?
+            <a href="{% url 'login' %}">Entrar</a>
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
