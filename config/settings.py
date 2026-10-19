@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-o6y)241guv3t!nemd%d2^450(caswm@++rez-g)$=5=inxstd)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    'sistema_django_noturno.onrender.com',
+]
 
 
 # Application definition
@@ -55,7 +58,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
