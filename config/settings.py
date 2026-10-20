@@ -26,10 +26,7 @@ SECRET_KEY = 'django-insecure-o6y)241guv3t!nemd%d2^450(caswm@++rez-g)$=5=inxstd)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'localhost',
-    'sistema_django_noturno.onrender.com',
-]
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -120,16 +117,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
+
 STATIC_URL = 'static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-    os.path.join(STATIC_ROOT, ''),
+    BASE_DIR / 'static',
 ]
 
-LOGIN_URL = '/login/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 
 # Email

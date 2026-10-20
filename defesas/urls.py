@@ -6,6 +6,7 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="index"),
+
     path("cadastro/", views.cadastro, name="cadastro"),
 
     path(
@@ -21,4 +22,29 @@ urlpatterns = [
         auth_views.LogoutView.as_view(),
         name="logout",
     ),
+
+    path(
+        "defesas/nova/",
+        views.criar_defesa,
+        name="criar_defesa",
+    ),
+
+    path(
+        "defesas/<int:pk>/",
+        views.detalhar_defesa,
+        name="detalhar_defesa",
+    ),
+
+    path(
+        "defesas/<int:pk>/editar/",
+        views.editar_defesa,
+        name="editar_defesa",
+    ),
+
+    path(
+        "defesas/<int:pk>/excluir/",
+        views.excluir_defesa,
+        name="excluir_defesa",
+    ),
 ]
+
